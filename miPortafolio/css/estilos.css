@@ -1,0 +1,96 @@
+*{
+box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6; /* interlineado */
+    color:black;
+    background-color: beige;
+
+}
+
+/* encabezado */
+
+header{
+    text-align: center;
+    padding: 50px 20px;
+    background-color: pink;
+    color: black; /* color del texto */
+
+}
+
+header h1{
+    /* solo aplica al h1 del header */
+    margin: 0;
+    font-size: 48px;
+    
+}
+
+header p{
+    margin-top: 10px ;
+    font-size: 20px;
+    font-style: italic;
+
+}
+
+/* navegacion */
+nav{
+    display: flex;
+    justify-content: center;
+    gap:25px ;/* separacion */
+    padding: 20px;
+    background-color: antiquewhite;
+    border-bottom: 1px solid #ddd;
+
+}
+
+nav a{
+    color: palevioletred;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    
+}
+
+/* MAIN */
+main{
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: cornsilk;
+
+}
+
+/* sectiones */
+ section{
+    padding: 60px 40px;
+    border-bottom: 4px solid #ddd;
+
+ }
+
+ section h2{
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+
+ }
+
+ /* seccion de inicio */
+ .seccion-inicio{
+    min-height: 400px;
+    display: flex;
+    justify-content: center; /* derecha a izquierda */
+    align-content: center; /* arriba hacia abajo */
+    text-align: center; /*  */
+
+ }
