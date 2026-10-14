@@ -23,7 +23,7 @@
         <a href="#habilidades">Habilidades</a> 
         <a href="#proyectos">Proyectos</a> 
         <a href="#contacto">Contacto</a>
-        <a href="php/admin.php">Admin</a>
+        <a href="admin.php">Admin</a>
     </nav>
 
     <!-- Contenido principal --> 
@@ -86,20 +86,20 @@
         <!-- Seccion de contacto --> 
         <section id="contacto"> 
             <h2>Contacto</h2> 
-            <form id="formulario"> 
+            <form id="formulario" action="guardar_mensaje.php" method="post"> 
                 <div class="campo"> 
                     <label for="nombre">Nombre</label> 
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre"> 
+                    <input type="text" id="nombre" name="txtnombre" placeholder="Escribe tu nombre"> 
                 </div> 
  
                 <div class="campo"> 
                     <label for="email">Correo electronico</label> 
-                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com"> 
+                    <input type="email" id="email" name="txtcorreo" placeholder="ejemplo@correo.com"> 
                 </div> 
  
                 <div class="campo"> 
                     <label for="mensaje">Mensaje</label> 
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje"></textarea> 
+                    <textarea id="mensaje" name="txtmensaje" rows="5" placeholder="Escribe tu mensaje"></textarea> 
                 </div> 
 
                 <button type="submit">Enviar mensaje</button> 

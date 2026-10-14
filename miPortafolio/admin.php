@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion | Mi Portafolio</title>
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="./css/estilos.css">
 </head>
 
 <body>
 
     <!-- Encabezado -->
     <header class="encabezado-admin">
-        <a href="../index.html" class="regresar" title="Regresar al portafolio">←</a>
+        <a href="index.php" class="regresar" title="Regresar al portafolio">←</a>
         <h1>Administracion</h1>
         <p>Mensajes recibidos</p>
     </header>

@@ -1,4 +1,4 @@
-const bienvenida=document.getElementById("bienvenida");
+/*const bienvenida=document.getElementById("bienvenida");
 const botonTexto=document.getElementById("cambiarTexto");
 
 botonTexto.onclick=function(){
@@ -34,4 +34,4 @@ formulario.onsubmit=function(event){
         return;
     }
     mensajeFormulario.textContent="Los datos fueron enviados correctamente";
-};
+};*/
