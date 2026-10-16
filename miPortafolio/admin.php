@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,33 +27,42 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
+                          
                             <th>Nombre</th>
                             <th>Correo electronico</th>
                             <th>Mensaje</th>
-                            <th>Acciones</th>
+                             <th>Fecha</th>
+                            <th>Opciones</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>dul</td>
-                            <td>dul@correo.com</td>
-                            <td>Hola, me gusto tu portafolio.</td>
-                            <td class="acciones">
-                                <a href="editar.php?id=1"
-                                   class="icono-accion editar"
-                                   title="Editar mensaje">✏️</a>
+                        <?php
+                        require 'consulta_mensajes.php';
+                        $rsMensajes=consultaMensajes();
+                        while($arrMensaje= mysqli_fetch_array($rsMensajes)){
+                            
+                        
 
-                                <button type="button"
-                                        class="icono-accion borrar"
-                                        title="Borrar mensaje"
-                                        onclick="alert('La opcion de borrar se habilitara despues.');">
-                                    🗑️
-                                </button>
-                            </td>
-                        </tr>
+                        echo "<tr>
+                        <td>".$arrMensaje['nombre']."</td>
+                        <td>".$arrMensaje['correo']."</td>
+                        <td>".$arrMensaje['mensaje']."</td>
+                        <td>".$arrMensaje['timeStaps']."</td>
+                        <td class='acciones'>
+                        <a href='editar.php?id=".$arrMensaje['id']."'
+                        class='icono-accion editar'
+                        title='Editar mensaje'>✏️</a>
+                        <button type='button'
+                        class='icono-accion borrar'
+                        title='Borrar mensaje'
+                        onclick=\"alert('La opción de borrar se habilitará después.')\">
+                        🗑️
+                        </button>
+                        </td>
+                        </tr>";
+                        }
+                        ?>
 
                         
                     </tbody>

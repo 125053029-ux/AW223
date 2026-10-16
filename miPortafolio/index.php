@@ -113,6 +113,6 @@
         <p>&copy; 2026 Mi Portafolio</p> 
         <p>Practica de Programacion Web</p> 
     </footer> 
-    <script src="./js/javascript.js"></script>
+    <script src="js/AlertInsert.js"></script>
 </body> 
 </html>
