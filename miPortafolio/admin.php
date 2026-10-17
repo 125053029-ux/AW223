@@ -13,10 +13,15 @@
 
     <!-- Encabezado -->
     <header class="encabezado-admin">
-        <a href="index.php" class="regresar" title="Regresar al portafolio">←</a>
+        
         <h1>Administracion</h1>
         <p>Mensajes recibidos</p>
+       
+           
     </header>
+     <nav> 
+       <a href="index.php" class="regresar" title="Regresar al portafolio">🏠</a>
+    </nav>
 
     <!-- Contenido principal -->
     <main>
