@@ -1,3 +1,30 @@
+<?php
+require_once("conexion.php");
+
+if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
+    header("Location: admin.php");
+    exit;
+}
+
+$id = $_GET["id"];
+
+$sql = "SELECT * FROM mensajes WHERE id = ?";
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+
+$resultado = $stmt->get_result();
+
+if ($resultado->num_rows == 0) {
+    header("Location: admin.php");
+    exit;
+}
+
+$mensajeActual = $resultado->fetch_assoc();
+
+$stmt->close();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,82 +38,77 @@
 
     <!-- Encabezado -->
     <header class="encabezado-admin">
-
-
         <h1>Editar mensaje</h1>
         <p>Modificar los datos del mensaje seleccionado</p>
     </header>
-<nav> 
+
+    <nav>
         <a href="index.php" class="regresar" title="Regresar al portafolio">🏠</a>
-<a href="admin.php" class="regresar">←</a>
+        <a href="admin.php" class="regresar" title="Regresar a administración">←</a>
     </nav>
+
     <!-- Contenido principal -->
     <main>
         <section>
-            <h2>Formulario de edicion</h2>
 
+            <h2>Formulario de edición</h2>
 
-            <form id="formEditar">
+            <!-- Mensaje para las alertas -->
+            <div id="mensajeAlerta"></div>
+
+            <form id="formEditar" action="actualizar.php" method="POST">
+
+                <input
+                    type="hidden"
+                    name="id"
+                    value="<?php echo htmlspecialchars($mensajeActual['id']); ?>">
 
                 <div class="campo">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" value="" required>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        value="<?php echo htmlspecialchars($mensajeActual['nombre']); ?>"
+                        required>
                 </div>
 
                 <div class="campo">
-                    <label for="correo">Correo electronico:</label>
-                    <input type="email" id="correo" value="" required>
+                    <label for="correo">Correo electrónico:</label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        value="<?php echo htmlspecialchars($mensajeActual['correo']); ?>"
+                        required>
                 </div>
 
                 <div class="campo">
                     <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" rows="5" required></textarea>
+
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        required><?php echo htmlspecialchars($mensajeActual['mensaje']); ?></textarea>
                 </div>
 
                 <button type="submit">Actualizar mensaje</button>
 
-                <p id="resultadoEditar"></p>
-
             </form>
+
         </section>
     </main>
 
-    <!-- Pie de pagina -->
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Mi Portafolio</p>
-        <p>Practica de Programacion Web</p>
+        <p>Práctica de Programación Web</p>
     </footer>
 
-    <script>
-        
-       /* var mensajes = {
-            1: {
-                nombre: "dul",
-                correo: "dul@correo.com",
-                mensaje: "Hola, me gusto tu portafolio."
-            }
-            
-        };*/
-
-         var parametros = new URLSearchParams(window.location.search);
-         var id = parametros.get("id");
-
-        if (mensajes[id]) {
-        document.getElementById("nombre").value = mensajes[id].nombre;
-        document.getElementById("correo").value = mensajes[id].correo;
-        document.getElementById("mensaje").value = mensajes[id].mensaje;
-         } else {
-        document.getElementById("resultadoEditar").textContent =
-                 "No se encontro el mensaje seleccionado";
-           }
-
-         document.getElementById("formEditar").addEventListener("submit", function(event) {
-             event.preventDefault();
-
-             document.getElementById("resultadoEditar").textContent =
-                 "Los cambios no se guardan permanentemente.";
-         });
-    </script>
+<script src="./js/AlertInsert.js"></script>
 
 </body>
 </html>

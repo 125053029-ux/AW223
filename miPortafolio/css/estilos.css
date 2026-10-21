@@ -358,5 +358,37 @@ footer p {
     .tabla-mensajes td {
         padding: 8px;
     }
+    /* Ajustar boton de borrar */
+/* Acomodar los botones de editar y borrar */
+.acciones {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.acciones form {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.acciones .icono-accion {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.acciones form button.borrar {
+    width: 45px;
+    height: 45px;
+    background-color: #ffdada;
+    border: none;
+}
 }
 

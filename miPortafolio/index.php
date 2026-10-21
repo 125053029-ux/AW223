@@ -8,6 +8,8 @@
 
 </head> 
 <body> 
+    
+   
     <!-- Encabezado --> 
     <header> 
         <h1>Mi Portafolio</h1> 
@@ -83,29 +85,54 @@
             </div> 
         </section> 
 
-        <!-- Seccion de contacto --> 
-        <section id="contacto"> 
-            <h2>Contacto</h2> 
-            <form id="formulario" action="guardar_mensaje.php" method="post"> 
-                <div class="campo"> 
-                    <label for="nombre">Nombre</label> 
-                    <input type="text" id="nombre" name="txtnombre" placeholder="Escribe tu nombre"> 
-                </div> 
- 
-                <div class="campo"> 
-                    <label for="email">Correo electronico</label> 
-                    <input type="email" id="email" name="txtcorreo" placeholder="ejemplo@correo.com"> 
-                </div> 
- 
-                <div class="campo"> 
-                    <label for="mensaje">Mensaje</label> 
-                    <textarea id="mensaje" name="txtmensaje" rows="5" placeholder="Escribe tu mensaje"></textarea> 
-                </div> 
+     
+        <!-- Seccion de contacto -->
+<section id="contacto">
 
-                <button type="submit">Enviar mensaje</button> 
-            </form> 
-            <p id="mensajeFormulario"></p>
-        </section> 
+    <h2>Contacto</h2>
+
+    <form id="formulario" action="guardar_mensaje.php" method="post">
+
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+
+            <input
+                type="text"
+                id="nombre"
+                name="txtnombre"
+                placeholder="Escribe tu nombre"
+                required>
+        </div>
+
+        <div class="campo">
+            <label for="email">Correo electronico</label>
+
+            <input
+                type="email"
+                id="email"
+                name="txtcorreo"
+                placeholder="ejemplo@correo.com"
+                required>
+        </div>
+
+        <div class="campo">
+            <label for="mensaje">Mensaje</label>
+
+            <textarea
+                id="mensaje"
+                name="txtmensaje"
+                rows="5"
+                placeholder="Escribe tu mensaje"
+                required></textarea>
+        </div>
+
+        <button type="submit">Enviar mensaje</button>
+
+    </form>
+
+    <p id="mensajeFormulario"></p>
+
+</section>
     </main> 
  
     <!-- Pie de pagina --> 
@@ -113,6 +140,6 @@
         <p>&copy; 2026 Mi Portafolio</p> 
         <p>Practica de Programacion Web</p> 
     </footer> 
-    <script src="js/AlertInsert.js"></script>
+<script src="./js/AlertInsert.js"></script>
 </body> 
 </html>
