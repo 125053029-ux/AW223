@@ -23,6 +23,47 @@
       <button class="boton" type="submit">Registrar</button>
     </form>
         </section>
+
+       <section>
+            <h2>Lista de mensajes</h2>
+
+            <div class="tabla-mensajes">
+                <table>
+                    <thead>
+                        <tr>
+                          
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                            <th>Categoria</th>
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        require 'consulta_gasto.php';
+                        $rsGasto=consultaGasto();
+                        while($arrGasto= mysqli_fetch_array($rsGasto)){
+                            
+                        
+
+                        echo "<tr>
+                        <td>".$arrGasto['concepto']."</td>
+                        <td>".$arrGasto['monto']."</td>
+                        <td>".$arrGasto['categoria']."</td>
+                        
+                        
+                        </tr>";
+                        }
+                        ?>
+
+                        
+                    </tbody>
+                </table>
+            </div>
+
+           
+        </section>
        </main>
 
 </body>
